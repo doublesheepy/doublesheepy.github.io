@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="本文旨在分享一些提高开发效率、编程幸福感的工具，共两部分内容：
+
+Vscode插件
+其他工具"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Peiyang Yang"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="那些能提高开发效率的工具"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="本文旨在分享一些提高开发效率、编程幸福感的工具，共两部分内容：
+
+Vscode插件
+其他工具"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Less is More"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://cat-walk.github.iohttps://dogfun.oss-cn-beijing.aliyuncs.com/blog/2019-04-05-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-04-03%20%E4%B8%8A%E5%8D%882.19.01.png"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://cat-walk.github.iohttps://dogfun.oss-cn-beijing.aliyuncs.com/blog/2019-04-05-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-04-03%20%E4%B8%8A%E5%8D%882.19.01.png"/>
+    
+
+    <!-- Title -->
+    
+    <title>那些能提高开发效率的工具 - Less is More</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">一个拥有两只猫的男人</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/cat-walk" target="_blank" rel="noopener">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://dogfun.oss-cn-beijing.aliyuncs.com/blog/2019-04-05-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-04-03%20%E4%B8%8A%E5%8D%882.19.01.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>那些能提高开发效率的工具</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-11-21
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Vscode/">#Vscode</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/前端/">前端</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>本文旨在分享一些<strong>提高开发效率</strong>、<strong>编程幸福感</strong>的工具，共两部分内容：</p>
+<ul>
+<li>Vscode插件</li>
+<li>其他工具</li>
+</ul>
+<a id="more"></a>
+
+
+
+<h2 id="Vscode插件"><a href="#Vscode插件" class="headerlink" title="Vscode插件"></a>Vscode插件</h2><table>
+<thead>
+<tr>
+<th align="center">插件</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Auto Close Tag</td>
+<td align="center">自动补齐闭合标签，如Vue中写<YourComponent>自动变成<YourComponent><YourComponent/></td>
+</tr>
+<tr>
+<td align="center">Auto Rename Tag</td>
+<td align="center">改标签名时闭合标签跟着改</td>
+</tr>
+<tr>
+<td align="center">Auto Import</td>
+<td align="center">根据你用到的变量、函数等自动提示需要导入的模块</td>
+</tr>
+<tr>
+<td align="center"><strong>Prettier</strong></td>
+<td align="center">格式化 / 美化你的代码，<strong>可以格式化带jsx的React代码</strong>，需要在Vscode右下角将js文件自动关联为javascriptReact格式</td>
+</tr>
+<tr>
+<td align="center"><strong>Bracket Pair Colorize</strong></td>
+<td align="center">给不同层级的括号加不同的颜色，<strong>方便你分清代码结构</strong></td>
+</tr>
+<tr>
+<td align="center">Chinese (Simplified) Language Pack for Visual Studio Code</td>
+<td align="center">让你的vscode变成<strong>中文界面</strong></td>
+</tr>
+<tr>
+<td align="center">ESLint</td>
+<td align="center"><strong>不了解lint规则的最好先别下，这里推荐airbnb的lint规则使用。</strong>lint是一个保证代码质量的工具，使用它可以使你的代码保持在良好的规范里，当你书写不合规范的代码时，它会通过警告来提示你</td>
+</tr>
+<tr>
+<td align="center">各类<strong>snippet</strong>插件（Vue、React等）</td>
+<td align="center">用简短的字母来打出一大段代码</td>
+</tr>
+<tr>
+<td align="center">cssrem</td>
+<td align="center">一个CSS值转REM的VSCode插件</td>
+</tr>
+<tr>
+<td align="center"><strong>File Utils</strong></td>
+<td align="center">用键盘快捷键来<strong>快速创建新的文件/文件夹</strong></td>
+</tr>
+<tr>
+<td align="center">Import Cost</td>
+<td align="center">在你引入模块的那行代码最后显示该模块的体积大小</td>
+</tr>
+<tr>
+<td align="center">Path Intellisense（以及搜索<strong>intellisense</strong>出来的各种插件）</td>
+<td align="center"><strong>填写路径</strong>时提供智能提醒</td>
+</tr>
+<tr>
+<td align="center">TODO Highlight</td>
+<td align="center"><strong>写代码时突然有灵感想记下来</strong>，或者有疑问想标记一下？你需要这款TODO插件</td>
+</tr>
+</tbody></table>
+<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><ul>
+<li><p>emmet: 一种快速书写html代码的规则</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div*3 === <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>snippet：代码片段</p>
+<ul>
+<li><p><strong>善用代码片段能大大提高你的编程效率</strong></p>
+</li>
+<li><p>如：装了<code>React(React-Native/React/Redux snippets for es6/es7)</code>这一插件后，写react代码：</p>
+<ul>
+<li><p><code>imrc</code> = <code>import React, { Component } from &#39;react&#39;</code></p>
+</li>
+<li><p><code>imrd</code> = <code>import ReactDOM from &#39;react-dom&#39;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>更好的终端（命令行）软件：</strong><a href="https://tonyxu.io/zh/posts/2018/ultimate-way-to-beautify-mac-terminal-and-recommendations-for-plugins/" target="_blank" rel="noopener">oh-my-zsh</a></p>
+</li>
+<li><p><strong>更好的markdown编辑器</strong>：<a href="https://typora.io/" target="_blank" rel="noopener">Typora</a></p>
+</li>
+<li><p>程序员专用字体：<a href="https://www.jianshu.com/p/266b4fa2c446" target="_blank" rel="noopener">Fira Code</a></p>
+</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>近来发现了自己在写代码时的短板：</p>
+<ul>
+<li>逻辑思维能力不够强，遇到逻辑比较复杂的js代码，如多层的条件判断，就比较懵逼。</li>
+</ul>
+<p>我认为这个问题不是短期内能解决的，于是就想了个曲线救国的方法，那就是提高我的开发效率，这样就能空出更多的时间来解决那些逻辑复杂的代码。   </p>
+<p>我可真是个小机灵鬼( ´▽｀)</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/cat-walk" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 Peiyang Yang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

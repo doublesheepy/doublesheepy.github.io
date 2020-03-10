@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="在VSCode里配置 ESLint + Airbnb + Vue前言：在网上找了一圈后没找到完整且最新的配置方案，故整合了几个优质答案和自己的心得，写了这篇文章。
+PS：参考文章在文章底部列出，如有侵权，请联系我删除，谢谢。
+创建VUE项目12345678910vue init webpack   "/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Peiyang Yang"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="在VSCode里配置 ESLint + Airbnb + Vue"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="在VSCode里配置 ESLint + Airbnb + Vue前言：在网上找了一圈后没找到完整且最新的配置方案，故整合了几个优质答案和自己的心得，写了这篇文章。
+PS：参考文章在文章底部列出，如有侵权，请联系我删除，谢谢。
+创建VUE项目12345678910vue init webpack   "/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Less is More"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://cat-walk.github.iohttps://dogfun.oss-cn-beijing.aliyuncs.com/blog/2019-04-05-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-04-03%20%E4%B8%8A%E5%8D%882.19.01.png"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://cat-walk.github.iohttps://dogfun.oss-cn-beijing.aliyuncs.com/blog/2019-04-05-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-04-03%20%E4%B8%8A%E5%8D%882.19.01.png"/>
+    
+
+    <!-- Title -->
+    
+    <title>在VSCode里配置 ESLint + Airbnb + Vue - Less is More</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">一个拥有两只猫的男人</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/cat-walk" target="_blank" rel="noopener">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://dogfun.oss-cn-beijing.aliyuncs.com/blog/2019-04-05-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-04-03%20%E4%B8%8A%E5%8D%882.19.01.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>在VSCode里配置 ESLint + Airbnb + Vue</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-03-04
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+<a href="/categories/前端/">前端</a>
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="在VSCode里配置-ESLint-Airbnb-Vue"><a href="#在VSCode里配置-ESLint-Airbnb-Vue" class="headerlink" title="在VSCode里配置 ESLint + Airbnb + Vue"></a>在VSCode里配置 ESLint + Airbnb + Vue</h1><p>前言：在网上找了一圈后没找到完整且最新的配置方案，故整合了几个优质答案和自己的心得，写了这篇文章。</p>
+<p>PS：参考文章在文章底部列出，如有侵权，请联系我删除，谢谢。</p>
+<h2 id="创建VUE项目"><a href="#创建VUE项目" class="headerlink" title="创建VUE项目"></a>创建VUE项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack      &#x2F;&#x2F;  初始化安装VUE项目</span><br><span class="line">project name          &#x2F;&#x2F;  输入项目名称</span><br><span class="line">project description   &#x2F;&#x2F;  输入项目说明</span><br><span class="line">author                &#x2F;&#x2F;  输入作者</span><br><span class="line">Vue build             &#x2F;&#x2F;  运行环境</span><br><span class="line">Install vue-router</span><br><span class="line">Use ESLint to lint your code (Yes&#x2F;No)  &#x2F;&#x2F;选择YES,安装eslint插件</span><br><span class="line">(选择代码规范airbnb)</span><br><span class="line">Set up unit tests (Y&#x2F;N)</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装-ESLint"><a href="#安装-ESLint" class="headerlink" title="安装 ESLint"></a>安装 ESLint</h2><h3 id="在VSCode中安装-ESLint-扩展"><a href="#在VSCode中安装-ESLint-扩展" class="headerlink" title="在VSCode中安装 ESLint 扩展"></a>在VSCode中安装 ESLint 扩展</h3><p>打开 VSCode 搜索 ESLint 扩展安装</p>
+<h3 id="用-NPM-安装-ESLint-包"><a href="#用-NPM-安装-ESLint-包" class="headerlink" title="用 NPM 安装 ESLint 包"></a>用 NPM 安装 ESLint 包</h3><ol>
+<li><p>全局安装（推荐）:</p>
+<p><code>npm install eslint -g</code></p>
+</li>
+<li><p>项目根目录本地安装：</p>
+<p><code>npm install eslint --save-dev</code></p>
+</li>
+</ol>
+<h2 id="采用Airbnb的代码规范"><a href="#采用Airbnb的代码规范" class="headerlink" title="采用Airbnb的代码规范"></a>采用Airbnb的代码规范</h2><h3 id="安装相关插件"><a href="#安装相关插件" class="headerlink" title="安装相关插件"></a>安装相关插件</h3><p><code>npm install eslint-config-airbnb-base eslint-plugin-import babel-eslint -g</code></p>
+<h3 id="修改配置文件-eslintrc-js"><a href="#修改配置文件-eslintrc-js" class="headerlink" title="修改配置文件 .eslintrc.js"></a>修改配置文件 <code>.eslintrc.js</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  root: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">// 要启用的环境</span></span><br><span class="line">  env: &#123;</span><br><span class="line">    <span class="comment">// 添加browser和es6的环境</span></span><br><span class="line">    browser: <span class="literal">true</span>,</span><br><span class="line">    es6: <span class="literal">true</span>,</span><br><span class="line">    node: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 关键：启用 airbnb 规则</span></span><br><span class="line">  extends: [<span class="string">'plugin:vue/essential'</span>, <span class="string">'airbnb-base'</span>],</span><br><span class="line">  <span class="comment">// 使用语言及版本</span></span><br><span class="line">  parserOptions: &#123;</span><br><span class="line">    parser: <span class="string">'babel-eslint'</span>,</span><br><span class="line">    ecmaVersion: <span class="number">2017</span>,</span><br><span class="line">    sourceType: <span class="string">'module'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 个人自定义规则</span></span><br><span class="line">  rules: &#123;</span><br><span class="line">    <span class="string">'no-console'</span>: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'error'</span> : <span class="string">'off'</span>,</span><br><span class="line">    <span class="string">'no-debugger'</span>: process.env.NODE_ENV === <span class="string">'production'</span> ? <span class="string">'error'</span> : <span class="string">'off'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置Vscode的eslint插件"><a href="#设置Vscode的eslint插件" class="headerlink" title="设置Vscode的eslint插件"></a>设置Vscode的eslint插件</h3><ol>
+<li>安装 eslint-plugin-vue 插件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g eslint-plugin-vue</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在 VSCode 的设置文件（settings.json）中添加如下配置：</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">"eslint.enable": true,</span><br><span class="line">   <span class="comment">// 保存时是否自动修复</span></span><br><span class="line">   "eslint.autoFixOnSave": true,</span><br><span class="line">   "eslint.alwaysShowStatus": true,</span><br><span class="line">   "eslint.provideLintTask": true,</span><br><span class="line">   "eslint.options": &#123;</span><br><span class="line">       <span class="comment">// 配置文件的地址</span></span><br><span class="line">       <span class="comment">// 请将下面的地址换成你的eslint配置文件.eslintrc.js的地址！！！</span></span><br><span class="line">       "configFile": "/Users/young/Desktop/music-player-in-Vue/.eslintrc.js",</span><br><span class="line">   &#125;,</span><br><span class="line">   "eslint.validate": [</span><br><span class="line">       "javascript",</span><br><span class="line">       "javascriptreact",</span><br><span class="line">       <span class="comment">// 启用 html 和 vue 中 ESLint 验证和自动修复</span></span><br><span class="line">       &#123;</span><br><span class="line">           <span class="attr">"language"</span>: <span class="string">"html"</span>,</span><br><span class="line">           <span class="attr">"autoFix"</span>: <span class="literal">true</span></span><br><span class="line">       &#125;,</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="attr">"language"</span>: <span class="string">"vue"</span>,</span><br><span class="line">           <span class="attr">"autoFix"</span>: <span class="literal">true</span></span><br><span class="line">       &#125;</span><br><span class="line">   ]</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ol>
+<li><a href="https://roojay.com/pages/3bcc390e/index.html" target="_blank" rel="noopener">VSCode 配置 ESLint + Airbnb + Vue</a></li>
+<li><a href="https://segmentfault.com/a/1190000015285153" target="_blank" rel="noopener">Vue项目中使用eslint的笔录，编辑器采用sublime3</a></li>
+</ol>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/cat-walk" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 Peiyang Yang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

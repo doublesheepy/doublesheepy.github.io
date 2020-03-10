@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="技术栈Vue + Vue-Router + Vuex + Webpack + Axios
+现在就克隆下来看看吧！Github 地址： https://github.com/cat-walk/music-player-in-vue
+项目部署地址： http://meiyun.info（暂时关闭了）
+如"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Peiyang Yang"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="高仿移动端网易云音乐 Vue前端项目"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="技术栈Vue + Vue-Router + Vuex + Webpack + Axios
+现在就克隆下来看看吧！Github 地址： https://github.com/cat-walk/music-player-in-vue
+项目部署地址： http://meiyun.info（暂时关闭了）
+如"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Less is More"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://cat-walk.github.iohttps://dogfun.oss-cn-beijing.aliyuncs.com/blog/2019-04-05-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-04-03%20%E4%B8%8A%E5%8D%882.19.01.png"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://cat-walk.github.iohttps://dogfun.oss-cn-beijing.aliyuncs.com/blog/2019-04-05-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-04-03%20%E4%B8%8A%E5%8D%882.19.01.png"/>
+    
+
+    <!-- Title -->
+    
+    <title>高仿移动端网易云音乐 Vue前端项目 - Less is More</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">一个拥有两只猫的男人</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/cat-walk" target="_blank" rel="noopener">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://dogfun.oss-cn-beijing.aliyuncs.com/blog/2019-04-05-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-04-03%20%E4%B8%8A%E5%8D%882.19.01.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>高仿移动端网易云音乐 Vue前端项目</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-04-18
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/VUE/">#VUE</a> <a href="/tags/前端/">#前端</a> <a href="/tags/练手/">#练手</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><p>Vue + Vue-Router + Vuex + Webpack + Axios</p>
+<h2 id="现在就克隆下来看看吧！"><a href="#现在就克隆下来看看吧！" class="headerlink" title="现在就克隆下来看看吧！"></a>现在就克隆下来看看吧！</h2><p>Github 地址： <a href="https://github.com/cat-walk/music-player-in-vue" target="_blank" rel="noopener">https://github.com/cat-walk/music-player-in-vue</a></p>
+<p>项目部署地址： <a href="http://meiyun.info（暂时关闭了）" target="_blank" rel="noopener">http://meiyun.info（暂时关闭了）</a></p>
+<p>如果你发现该项目有问题，建议先看看本文底部的<strong>项目已知问题</strong>，里面可能会有说明，如果没有，欢迎 issue 或留言，谢谢～</p>
+<h3 id="前端部分"><a href="#前端部分" class="headerlink" title="前端部分"></a>前端部分</h3><ol>
+<li>安装依赖</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>起项目</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
+
+<h3 id="后端部分"><a href="#后端部分" class="headerlink" title="后端部分"></a>后端部分</h3><p>Github 地址：<a href="https://github.com/Binaryify/NeteaseCloudMusicApi" target="_blank" rel="noopener">https://github.com/Binaryify/NeteaseCloudMusicApi</a></p>
+<p>后端操作见文档。</p>
+</br>
+
+</br>
+
+<h2 id="界面和功能展示"><a href="#界面和功能展示" class="headerlink" title="界面和功能展示"></a>界面和功能展示</h2><h3 id="首页展示-banner、推荐歌单，点击可进入排行榜"><a href="#首页展示-banner、推荐歌单，点击可进入排行榜" class="headerlink" title="首页展示 banner、推荐歌单，点击可进入排行榜"></a>首页展示 banner、推荐歌单，点击可进入排行榜</h3><p><strong>歌曲播放界面支持播放进度同步、收藏或取消收藏当前歌曲</strong></p>
+<p>banner、排行榜左边的三个按钮点击没有效果( ´▽ ｀) ，没时间写那些啦…</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c181ed1d5348?w=750&h=1334&f=png&s=892360" width="375" /></th>
+<th><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c181ecd41e5a?w=750&h=1334&f=png&s=329855" width="375" /></th>
+<th><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c181efbf7126?w=750&h=1334&f=png&s=389921" width="375" /></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c181ef0ad516?w=750&h=1334&f=png&s=234369" width="375" /></td>
+<td><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c181f0016ee9?w=750&h=1334&f=png&s=281824" width="375" /></td>
+<td><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c181ed071dc3?w=750&h=1334&f=png&s=831158" width="375" /></td>
+</tr>
+</tbody></table>
+</br>
+
+</br>
+
+<h3 id="实现了登录功能"><a href="#实现了登录功能" class="headerlink" title="实现了登录功能"></a>实现了登录功能</h3><p>登录后展示头像和昵称，且可进入个人中心即“我的”页面，可查看收藏的音乐和最近播放过的音乐。</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c18223be490d?w=750&h=1334&f=png&s=195108" width="375" /></th>
+<th><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c1822624452a?w=750&h=1334&f=png&s=74361" width="375" /></th>
+<th><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c1822764f1ec?w=750&h=1334&f=png&s=75182" width="375" /></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c18227b3e887?w=750&h=1334&f=png&s=224418" width="375" /></td>
+<td><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c1823fba3f76?w=750&h=1334&f=png&s=487331" width="375" /></td>
+<td><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c1823cf2bc87?w=750&h=1334&f=png&s=71653" width="375" /></td>
+</tr>
+</tbody></table>
+</br>
+
+</br>
+
+<h3 id="搜索模块：热门搜索、搜索历史、搜索建议"><a href="#搜索模块：热门搜索、搜索历史、搜索建议" class="headerlink" title="搜索模块：热门搜索、搜索历史、搜索建议"></a>搜索模块：热门搜索、搜索历史、搜索建议</h3><table>
+<thead>
+<tr>
+<th align="center"><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c182467a56f5?w=750&h=1334&f=png&s=99312" width="375" /></th>
+<th><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c1825a4bebcf?w=750&h=1334&f=png&s=169094" width="375" /></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c18263ba78b6?w=750&h=1334&f=png&s=177607" width="375" /></td>
+<td><img src="https://user-gold-cdn.xitu.io/2019/4/18/16a2c18263c1c242?w=750&h=1334&f=png&s=104568" width="375" /></td>
+</tr>
+</tbody></table>
+</br>
+
+</br>
+
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>PS：</p>
+<ol>
+<li><p>打勾的为已完成的内容，现在本项目除个人信息修改以外，其他功能都已完成。</p>
+</li>
+<li><p>字体加粗的部分为一个组件，第二次使用同一组件（即组件复用）时不再加粗，以做标识。</p>
+</li>
+</ol>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <p><strong>1. 侧边栏模块</strong></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 个人信息展示（头像、昵称）<ul>
+<li><input disabled="" type="checkbox"> 个人信息修改</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 登录按钮<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>登录模块</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <p><strong>2. 音乐推荐模块</strong>（主页)</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>轮播图 banner 模块</strong></li>
+<li><input checked="" disabled="" type="checkbox"> 排行榜入口<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>排行榜模块</strong></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>歌单详情模块</strong><ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>播放控制模块：实现了收藏/取消收藏歌曲的功能，实现了添加到最近播放歌曲的功能</strong></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>推荐歌单模块</strong><ul>
+<li><input checked="" disabled="" type="checkbox"> 歌单详情模块</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 播放控制模块：实现了收藏/取消收藏歌曲的功能，实现了添加到最近播放歌曲的功能</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <p><strong>3. 个人中心模块</strong></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 最近播放歌曲入口<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>最近播放歌曲展示模块</strong></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 播放控制模块：实现了收藏/取消收藏歌曲的功能，实现了添加到最近播放歌曲的功能</li>
+<li><input checked="" disabled="" type="checkbox"> 我的收藏入口<ul>
+<li><input checked="" disabled="" type="checkbox"> 歌单详情模块</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 播放控制模块：实现了收藏/取消收藏歌曲的功能，实现了添加到最近播放歌曲的功能</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> <p><strong>4. 搜索模块</strong></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>搜索框模块</strong><ul>
+<li><input checked="" disabled="" type="checkbox"> <strong>搜索结果模块</strong></li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 播放控制模块：实现了收藏/取消收藏歌曲的功能，实现了添加到最近播放歌曲的功能</li>
+<li><input checked="" disabled="" type="checkbox"> <strong>热门搜索模块</strong><ul>
+<li><input checked="" disabled="" type="checkbox"> 搜索结果模块</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 播放控制模块：实现了收藏/取消收藏歌曲的功能，实现了添加到最近播放歌曲的功能</li>
+<li><input checked="" disabled="" type="checkbox"> 搜索历史模块（与热门搜索模块公用一个组件）<ul>
+<li><input checked="" disabled="" type="checkbox"> 搜索结果模块</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 播放控制模块：实现了收藏/取消收藏歌曲的功能，实现了添加到最近播放歌曲的功能</li>
+</ul>
+</li>
+</ul>
+</br>
+
+</br>
+
+<h2 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h2><p>使用 EsLint, lint 规范采用 airbnb 的 js 代码规范</p>
+<p><a href="https://catwalk.red/2019/03/04/%E5%9C%A8VSCode%E9%87%8C%E9%85%8D%E7%BD%AE%20ESLint%20+%20Airbnb%20+%20Vue/" target="_blank" rel="noopener">在 VSCode 里配置 ESLint + Airbnb + Vue</a></p>
+</br>
+
+</br>
+
+<h2 id="技术方案"><a href="#技术方案" class="headerlink" title="技术方案"></a>技术方案</h2><ul>
+<li><p>项目目录结构</p>
+<p>参考 <a href="https://juejin.im/entry/5abd80fa518825558a06b7ce" target="_blank" rel="noopener">优雅的 Vue 项目目录结构设计</a></p>
+</li>
+<li><p>移动适配方案</p>
+<p>基于<a href="https://github.com/amfe/lib-flexible" target="_blank" rel="noopener">amfe-flexible</a>，进行了符合自己使用习惯的修改</p>
+<p>示例：</p>
+<ul>
+<li><p>根目录字体大小：100px，即 1rem = 100px。</p>
+</li>
+<li><p>设计稿上 75px = 75/100 = 0.75rem。</p>
+</li>
+</ul>
+</li>
+<li><p><del>统一不同浏览器的默认样式: Normalize.css</del>现已改用<a href="https://github.com/jgthms/minireset.css" target="_blank" rel="noopener">minireset.css</a></p>
+<p>Normalize.css：参考 <a href="https://www.jianshu.com/p/ad64c21e899a" target="_blank" rel="noopener">normalize.css 与 reset.css 的不同</a> <a href="https://cnodejs.org/topic/57f3846e83a4d9176a71da82" target="_blank" rel="noopener">normalize.css 的使用</a></p>
+</li>
+<li><p>侧边栏实现：<a href="https://github.com/vouill/vue-slideout" target="_blank" rel="noopener">vue-slideout</a></p>
+</li>
+<li><p>轮播图实现：<a href="https://github.com/surmon-china/vue-awesome-swiper" target="_blank" rel="noopener">在 Vue 中使用 Swiper</a></p>
+</li>
+</ul>
+</br>
+
+</br>
+
+<h2 id="项目已知问题"><a href="#项目已知问题" class="headerlink" title="项目已知问题"></a>项目已知问题</h2><p><strong>收藏歌曲功能</strong></p>
+<ol>
+<li><p>点击收藏歌曲按钮后，有时会有一定的延迟（0.5s ～ 5s，视网络情况）收藏才会成功。</p>
+<p>该问题可能是后台对网易云的数据做了缓存导致的。（这个思考并没有动脑子，咳咳( ´▽ ｀)</p>
+</li>
+<li><p>由于尚未做节流和防抖，过于密集地点击收藏按钮时，可能会导致收藏/取消收藏功能不生效。</p>
+</li>
+</ol>
+<p><strong>播放歌曲页面</strong></p>
+<ol>
+<li>由于一系列复杂的问题，通过搜索界面进入歌曲控制页面的话，没有封面图片，只有懒加载的默认图片</li>
+<li>播放音乐时，旋转的封面图片有时会出现闪动</li>
+<li><strong>如果你打开某一首歌无法播放，那可能这首歌是要付费才能播放的，换一首即可。</strong>有时间会优化需要付费才能播放的提示。</li>
+</ol>
+<p><strong>侧边栏（Vue-Slideout 插件实现，=====&gt;甩锅:) ）</strong></p>
+<ol>
+<li><p>在”我的”页面下（还有部分其他页面），呼出侧边栏的按钮无法点击</p>
+</li>
+<li><p>在一些不需要侧边栏功能的页面，尚未禁用呼出侧边栏功能</p>
+</li>
+<li><p><strong>侧边栏暂时只能通过左滑操作来关闭</strong>，尚未实现点击空白处关闭侧边栏</p>
+</li>
+</ol>
+<p><strong>ios 端</strong></p>
+<ol>
+<li>由于<strong>iOS 下规定 audio 标签不能自动播放</strong>，因此，<strong>iOS 环境下，第一次播放音乐时，需要点击暂停后再点击播放按钮</strong>，如此即可。</li>
+<li>点击底部音乐控制面板后，有时会重新开始播放</li>
+</ol>
+</br>
+
+<p><strong>写这个项目的经验和收获将在整理后发到我的 Github 上，应该不会鸽</strong></p>
+</br>
+
+</br>
+
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><p><strong>非常感谢后台提供者<a href="https://github.com/Binaryify/NeteaseCloudMusicApi" target="_blank" rel="noopener">Binaryify</a>，接口很稳定，文档很完善</strong></p>
+<p><strong>非常感谢<a href="https://github.com/CaiJinyc/vue-music-webapp" target="_blank" rel="noopener">CaiJinyc</a>，我从 ta 的项目里学到了不少</strong></p>
+<ol>
+<li><a href="https://github.com/CaiJinyc/vue-music-webapp" target="_blank" rel="noopener">https://github.com/CaiJinyc/vue-music-webapp</a></li>
+<li><a href="https://github.com/Binaryify/NeteaseCloudMusicApi" target="_blank" rel="noopener">https://github.com/Binaryify/NeteaseCloudMusicApi</a></li>
+</ol>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/cat-walk" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 Peiyang Yang<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
